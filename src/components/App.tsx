@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import TodoList from './TodoList';
-import AddTodo from './AddTodo';
+import {TodoList} from './TodoList';
+import {AddTodo} from './AddTodo';
 import { IItem } from '../types/todo';
 
-const App: React.FC = () => {
-  // const todos = [{ id: '1', title: 'text' }];
+export const App: React.FC = () => {
   const [todos, setTodos] = useState<IItem[]>([]);
 
   function todoAddHandler(todo: IItem) {
@@ -33,5 +32,3 @@ const App: React.FC = () => {
     </>
   );
 }
-
-export default App;

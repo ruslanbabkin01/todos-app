@@ -7,7 +7,7 @@ interface IProps{
    onAddTodo: (todo:IItem) => void;
 }
 
-const AddTodo: React.FC<IProps> = ({onAddTodo}) => {
+export const AddTodo: React.FC<IProps> = ({onAddTodo}) => {
    const [todo, setTodo] = useState < Partial <OnlyTitle>> ({});
    const titleInputRef = useRef<HTMLInputElement>(null);
 
@@ -24,11 +24,7 @@ const AddTodo: React.FC<IProps> = ({onAddTodo}) => {
       }
 
       onAddTodo(todo as IItem);
-      // console.log(todo.title);
-      // console.log(titleInputRef.current?.value);
    }
-
-   
 
   return (
      <form onSubmit={handleSubmit}>
@@ -42,5 +38,3 @@ const AddTodo: React.FC<IProps> = ({onAddTodo}) => {
     </form>
   );
 };
-
-export default AddTodo;

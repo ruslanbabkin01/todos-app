@@ -6,17 +6,16 @@ interface IProps {
    onRemoveTodo: (id:string) => void;
 };
 
-const TodoList: React.FC<IProps> = (props) => {
+export const TodoList: React.FC<IProps> = ({onRemoveTodo, todos}) => {
   
   return (
     <ul>
-      {props.todos.map(todo => (
+      {todos.map(todo => (
         <li key={todo.id}>
           <div>{todo.title}</div>
           <div>{todo.id}</div>
-        <button onClick={()=> props.onRemoveTodo(todo.id)}>Remove</button></li>
+        <button onClick={()=> onRemoveTodo(todo.id)}>Remove</button></li>
       ))}
     </ul>
   );
 };
-export default TodoList;
