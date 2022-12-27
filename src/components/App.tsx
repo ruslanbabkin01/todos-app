@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import TodoList from './components/TodoList';
-import AddTodo from './components/AddTodo';
-import { IItem } from './types/todo';
-
+import TodoList from './TodoList';
+import AddTodo from './AddTodo';
+import { IItem } from '../types/todo';
 
 const App: React.FC = () => {
   // const todos = [{ id: '1', title: 'text' }];
@@ -19,12 +18,18 @@ const App: React.FC = () => {
   })
   }
 
-
-
+  function todoRemoveHandler(id: string) {
+    setTodos((prevState) => {
+      return prevState.filter((item) => {
+        return item.id !== id;
+      })
+  })
+  }
+  
   return (
     <>
-      <TodoList todos={todos}  />
       <AddTodo onAddTodo={todoAddHandler }/>
+      <TodoList todos={todos} onRemoveTodo={todoRemoveHandler} />
     </>
   );
 }
