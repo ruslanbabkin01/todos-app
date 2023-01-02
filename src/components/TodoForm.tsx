@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 interface TodoFormProps {
   onAddTodo(title: string): void;
@@ -14,7 +15,7 @@ export const TodoForm: React.FC<TodoFormProps> = ({ onAddTodo }) => {
   function onHandleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!title) {
-      // toast.info('Please entry correct ');
+      Notify.info('Please entry correct ');
       return;
     }
 
