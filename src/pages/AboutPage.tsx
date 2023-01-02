@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -11,9 +11,9 @@ export const AboutPage: React.FC = () => {
         quaerat assumenda voluptas placeat voluptates quibusdam, eius labore at
         esse explicabo!
       </p>
-      <button className="btn" onClick={() => <Navigate to="/" replace />}>
+      <NavLink to="/" className="btn">
         Return to todos
-      </button>
+      </NavLink>
     </>
   );
 };
