@@ -1,34 +1,19 @@
-import React, { useState } from 'react';
-import {TodoList} from './TodoList';
-import {AddTodo} from './AddTodo';
-import { IItem } from '../types/todo';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Navbar } from './Navbar';
+import { TodosPage } from 'pages/TodosPage';
+import { AboutPage } from 'pages/AboutPage';
 
 export const App: React.FC = () => {
-  const [todos, setTodos] = useState<IItem[]>([]);
-
-  function todoAddHandler(todo: IItem) {
-    setTodos((prevState) => {
-      return [
-      ...prevState,
-      {
-        id: Math.random().toString(),
-        title: todo.title
-      }]
-  })
-  }
-
-  function todoRemoveHandler(id: string) {
-    setTodos((prevState) => {
-      return prevState.filter((item) => {
-        return item.id !== id;
-      })
-  })
-  }
-  
   return (
-    <>
-      <AddTodo onAddTodo={todoAddHandler }/>
-      <TodoList todos={todos} onRemoveTodo={todoRemoveHandler} />
-    </>
+    <BrowserRouter>
+      <Navbar />
+      <div className="container">
+        <Routes>
+          <Route index element={<TodosPage />} path="/" />
+          <Route element={<AboutPage />} path="/about" />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-}
+};
