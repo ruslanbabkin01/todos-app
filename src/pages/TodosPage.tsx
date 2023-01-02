@@ -28,16 +28,16 @@ export const TodosPage: React.FC = () => {
     }
   }
 
-  function todoToggleHandler(id: number) {
-    setTodos(prevState =>
-      prevState.map(todo => {
+  const todoToggleHandler = (id: number) => {
+    setTodos(prev =>
+      prev.map(todo => {
         if (todo.id === id) {
           todo.completed = !todo.completed;
         }
         return todo;
       })
     );
-  }
+  };
 
   return (
     <>

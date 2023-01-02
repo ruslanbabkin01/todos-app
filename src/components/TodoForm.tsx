@@ -29,12 +29,11 @@ export const TodoForm: React.FC<TodoFormProps> = ({ onAddTodo }) => {
         id="title"
         value={title}
         onChange={onChangeHandler}
-        placeholder="Add todo"
+        placeholder="Please enter todo"
       />
       <label htmlFor="title" className="active">
-        Please enter todo
+        Add todo
       </label>
-      <button type="submit">Add</button>
     </form>
   );
 };

@@ -35,7 +35,7 @@ export const TodoList: React.FC<ITodoListProps> = ({
               <input
                 type="checkbox"
                 checked={todo.completed}
-                onChange={onToggleTodo.bind(null, todo.id)}
+                onChange={() => onToggleTodo(todo.id)}
               />
               <span>{todo.title}</span>
               <i

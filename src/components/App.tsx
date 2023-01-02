@@ -6,7 +6,7 @@ import { AboutPage } from 'pages/AboutPage';
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/todo-app">
       <Navbar />
       <div className="container">
         <Routes>
