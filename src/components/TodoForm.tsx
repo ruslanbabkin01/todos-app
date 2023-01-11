@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 interface TodoFormProps {
