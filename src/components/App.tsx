@@ -1,12 +1,11 @@
-
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import { TodosPage } from 'pages/TodosPage';
 import { AboutPage } from 'pages/AboutPage';
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
       <div className="container">
         <Routes>
@@ -14,6 +13,6 @@ export const App: React.FC = () => {
           <Route element={<AboutPage />} path="/about" />
         </Routes>
       </div>
-    </BrowserRouter>
+    </>
   );
 };
