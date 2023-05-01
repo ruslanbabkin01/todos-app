@@ -14,7 +14,7 @@ export const TodosPage: React.FC = () => {
 
   function todoAddHandler(title: string) {
     const newTodo: ITodo = {
-      title: title,
+      title,
       id: Date.now(),
       completed: false,
     };
@@ -32,7 +32,10 @@ export const TodosPage: React.FC = () => {
     setTodos(prev =>
       prev.map(todo => {
         if (todo.id === id) {
-          todo.completed = !todo.completed;
+          return {
+        ...todo,
+        completed: !todo.completed
+      };
         }
         return todo;
       })
